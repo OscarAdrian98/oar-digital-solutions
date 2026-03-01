@@ -7,8 +7,12 @@
   --bg: #f5f7fa;
   --text: #1E2F4F;
   --white: #ffffff;
+
+  /* Premium tweaks */
   --shadow: 0 12px 32px rgba(0,0,0,0.08);
+  --shadow-strong: 0 25px 60px rgba(0,0,0,0.12);
   --radius: 12px;
+  --radius-2: 14px;
 }
 
 *{
@@ -102,8 +106,9 @@ a{
 /* ================= HERO ================= */
 
 .hero {
-  background: radial-gradient(1000px 400px at 50% 0%, rgba(230,180,34,0.18), transparent 60%),
-              linear-gradient(135deg, var(--primary), var(--primary-2));
+  background:
+    radial-gradient(1000px 400px at 50% 0%, rgba(230,180,34,0.18), transparent 60%),
+    linear-gradient(135deg, var(--primary), var(--primary-2));
   color: white;
   text-align: center;
   padding: 140px 20px 120px 20px;
@@ -112,13 +117,14 @@ a{
 .hero h1 {
   font-size: 44px;
   margin-bottom: 16px;
+  letter-spacing: -0.2px;
 }
 
 .hero h2 {
   font-size: 20px;
   color: var(--accent);
   margin-bottom: 20px;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .hero p {
@@ -149,21 +155,27 @@ a{
   padding: 14px 30px;
   background: var(--accent);
   color: var(--primary);
-  font-weight: 700;
+  font-weight: 800;
   border-radius: 10px;
-  transition: 0.25s ease;
+  transition: all 0.30s ease;
   box-shadow: 0 10px 18px rgba(230,180,34,0.18);
+  will-change: transform;
 }
 
 .btn:hover {
   background: #d4a41d;
-  transform: translateY(-2px);
+  transform: translateY(-3px);
+  box-shadow: 0 15px 35px rgba(230,180,34,0.25);
+}
+
+.btn:active{
+  transform: translateY(-1px);
 }
 
 .btn-outline{
   background: transparent;
   color: white;
-  border: 2px solid rgba(255,255,255,0.4);
+  border: 2px solid rgba(255,255,255,0.42);
   box-shadow: none;
 }
 
@@ -182,6 +194,19 @@ a{
   text-align: center;
   margin-bottom: 45px;
   font-size: 30px;
+  position: relative;
+}
+
+/* Línea decorativa premium bajo títulos */
+.section h2::after{
+  content:"";
+  width: 64px;
+  height: 3px;
+  background: var(--accent);
+  display: block;
+  margin: 14px auto 0;
+  border-radius: 3px;
+  opacity: 0.95;
 }
 
 .bg-dark {
@@ -205,10 +230,11 @@ a{
 .card {
   background: white;
   padding: 30px;
-  border-radius: var(--radius);
+  border-radius: var(--radius-2);
   box-shadow: var(--shadow);
-  transition: 0.25s ease;
-  border: 1px solid rgba(30,47,79,0.06);
+  transition: all 0.35s ease;
+  border: 1px solid rgba(30,47,79,0.05);
+  will-change: transform;
 }
 
 .card h3{
@@ -217,7 +243,8 @@ a{
 }
 
 .card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-strong);
 }
 
 .bg-dark .card {
@@ -225,7 +252,7 @@ a{
   color: var(--text);
 }
 
-/* ================= PROYECTOS ================= */
+/* ================= PROYECTOS (si lo vuelves a usar) ================= */
 
 .project {
   margin-bottom: 36px;
@@ -268,6 +295,26 @@ footer {
   font-size: 14px;
 }
 
+/* ================= ANIMACIONES ================= */
+
+.fade-in{
+  opacity:0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+
+.fade-in.show{
+  opacity:1;
+  transform: translateY(0);
+}
+
+/* Mejor experiencia para quien tenga "reducir movimiento" activado */
+@media (prefers-reduced-motion: reduce){
+  html{ scroll-behavior: auto; }
+  .fade-in{ opacity:1; transform:none; transition:none; }
+  .btn, .card{ transition:none; }
+}
+
 /* ================= RESPONSIVE ================= */
 
 @media (max-width: 992px) {
@@ -284,6 +331,9 @@ footer {
     height: 58px;
   }
 
+  .section h2{
+    font-size: 28px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -295,6 +345,7 @@ footer {
 
   .nav-links {
     justify-content: center;
+    gap: 14px;
   }
 
   .hero {
@@ -309,12 +360,41 @@ footer {
     font-size: 16px;
   }
 
+  .hero p{
+    font-size: 15px;
+  }
+
+  .hero-actions{
+    gap: 12px;
+  }
+
+  /* Botones más cómodos en móvil */
+  .btn{
+    padding: 13px 22px;
+    font-size: 15px;
+  }
+
+  .btn-small{
+    padding: 10px 14px !important;
+    font-size: 14px !important;
+  }
+
   .section {
     padding: 65px 15px;
   }
 
+  .section h2{
+    font-size: 24px;
+    margin-bottom: 34px;
+  }
+
   .card{
     padding: 24px;
+  }
+
+  .grid{
+    gap: 18px;
+    margin-top: 28px;
   }
 
   .project{
