@@ -625,3 +625,30 @@ footer {
   }
 
 }
+
+/* ─── GRID 5 SERVICIOS ─── */
+
+.services-grid-5 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.services-grid-5 .service-card:nth-child(4) {
+  grid-column: 1 / 2;
+  margin-left: calc(50% + 7px);
+}
+
+.services-grid-5 .service-card:nth-child(5) {
+  grid-column: 2 / 3;
+}
+
+@media (max-width: 768px) {
+  .services-grid-5 {
+    grid-template-columns: 1fr;
+  }
+
+  .services-grid-5 .service-card:nth-child(4),
+  .services-grid-5 .service-card:nth-child(5) {
+    grid-column: auto;
+    margin-left: 0;
+  }
+}
