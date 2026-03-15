@@ -3,6 +3,10 @@
    Estilos globales para todas las páginas del sitio
    ============================================================ */
 
+/* ─── GOOGLE FONTS ─── */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Bricolage+Grotesque:wght@400;600;700;800&display=swap');
+
 /* ─── VARIABLES ─── */
 
 :root {
@@ -149,7 +153,9 @@ img {
 
 .navbar {
   position: fixed;
-  top: 0; left: 0; right: 0;
+  top: 0;
+  left: 0;
+  right: 0;
   z-index: 100;
   height: var(--nav);
   background: var(--bg-dark);
@@ -453,8 +459,8 @@ footer {
 
 .footer-grid {
   display: grid;
-  grid-template-columns: 1.6fr 1fr 1fr 1fr;
-  gap: 40px;
+  grid-template-columns: 1.4fr 1fr 1fr 1fr 1fr;
+  gap: 32px;
   margin-bottom: 44px;
 }
 
@@ -468,7 +474,7 @@ footer {
   font-size: 0.845rem;
   color: #555555;
   line-height: 1.65;
-  max-width: 230px;
+  max-width: 210px;
 }
 
 .footer-col h4 {
@@ -559,6 +565,7 @@ footer {
 
 /* Móvil */
 @media (max-width: 768px) {
+
   .nav-links {
     display: none;
   }
@@ -594,10 +601,12 @@ footer {
     padding-top: calc(var(--nav) + 40px);
     padding-bottom: 48px;
   }
+
 }
 
 /* Móvil pequeño */
 @media (max-width: 480px) {
+
   .container {
     padding: 0 20px;
   }
@@ -614,4 +623,5 @@ footer {
   .cta-actions a {
     justify-content: center;
   }
+
 }

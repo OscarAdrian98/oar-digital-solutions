@@ -38,7 +38,15 @@
     <priority>0.9</priority>
   </url>
 
-  <!-- SECTORES -->
+  <!-- SECTORES (página resumen) -->
+  <url>
+    <loc>https://oar-digital.com/sectores.html</loc>
+    <lastmod>2026-03-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- SECTORES (páginas individuales) -->
   <url>
     <loc>https://oar-digital.com/sectores/software-para-gimnasios.html</loc>
     <lastmod>2026-03-15</lastmod>
