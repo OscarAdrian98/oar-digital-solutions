@@ -1,1412 +1,517 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
   <title>Automatización empresarial y software a medida | OAR Digital Solutions</title>
   <meta name="description" content="Automatización empresarial, software a medida y sistemas de gestión para pymes. Eliminamos tareas manuales, digitalizamos procesos y mejoramos la eficiencia de tu negocio." />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://oar-digital.com" />
-
   <meta property="og:title" content="Automatización empresarial y software a medida | OAR Digital Solutions" />
   <meta property="og:description" content="Digitalización empresarial, automatización de procesos y desarrollo de software a medida para pymes y autónomos." />
   <meta property="og:image" content="https://oar-digital.com/assets/logo.png" />
   <meta property="og:url" content="https://oar-digital.com" />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="es_ES" />
-
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Automatización empresarial y software a medida | OAR Digital Solutions" />
-  <meta name="twitter:description" content="Digitalizamos tu empresa. Automatización de procesos, software a medida y sistemas de gestión." />
-  <meta name="twitter:image" content="https://oar-digital.com/assets/logo.png" />
-
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    "name": "OAR Digital Solutions",
-    "url": "https://oar-digital.com",
-    "email": "info@oar-digital.com",
-    "telephone": "+34644747610",
-    "description": "Automatización empresarial, digitalización de procesos y desarrollo de software a medida para pymes y autónomos.",
-    "areaServed": "ES",
-    "serviceType": ["Automatización empresarial", "Software a medida", "Sistemas de gestión", "Digitalización de procesos"]
-  }
+  {"@context":"https://schema.org","@type":"ProfessionalService","name":"OAR Digital Solutions","url":"https://oar-digital.com","email":"info@oar-digital.com","telephone":"+34644747610","description":"Automatización empresarial, digitalización de procesos y desarrollo de software a medida para pymes y autónomos.","areaServed":"ES","serviceType":["Automatización empresarial","Software a medida","Sistemas de gestión","Digitalización de procesos"]}
   </script>
-
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Bricolage+Grotesque:wght@400;600;700;800&display=swap" rel="stylesheet" />
-
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Crimson+Pro:ital,wght@1,300&display=swap" rel="stylesheet" />
   <style>
-
-    /* ─── RESET ─── */
-
-    *, *::before, *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    /* ─── VARIABLES ─── */
-
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --bg:         #ffffff;
-      --bg-soft:    #f7f7f5;
-      --bg-dark:    #0e0e0e;
-      --text:       #111111;
-      --text-mid:   #444444;
-      --text-light: #888888;
-      --accent:     #1a56f0;
-      --accent-dk:  #1240c0;
-      --border:     #e5e5e5;
-      --border-dk:  #222222;
-      --font-h:     'Bricolage Grotesque', sans-serif;
-      --font-b:     'Inter', sans-serif;
-      --r:          10px;
-      --r-lg:       16px;
-      --max:        1120px;
-      --nav:        68px;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: var(--font-b);
-      font-size: 16px;
-      line-height: 1.65;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    img {
-      display: block;
-      max-width: 100%;
-    }
-
-    /* ─── LAYOUT ─── */
-
-    .container {
-      max-width: var(--max);
-      margin: 0 auto;
-      padding: 0 28px;
-    }
-
-    /* ─── NAVBAR ─── */
-
-    .navbar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 100;
-      height: var(--nav);
-      background: var(--bg-dark);
-      border-bottom: 1px solid var(--border-dk);
-      display: flex;
-      align-items: center;
-    }
-
-    .nav-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      width: 100%;
-      max-width: var(--max);
-      margin: 0 auto;
-      padding: 0 28px;
-    }
-
-    .nav-logo img {
-      height: 38px;
-      width: auto;
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 36px;
-    }
-
-    .nav-links a {
-      font-size: 0.875rem;
-      font-weight: 500;
-      color: #999999;
-      transition: color 0.2s;
-    }
-
-    .nav-links a:hover {
-      color: #ffffff;
-    }
-
-    .btn-nav {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 9px 20px;
-      background: var(--accent);
-      color: #ffffff !important;
-      font-weight: 600;
-      font-size: 0.85rem;
-      border-radius: 8px;
-      transition: background 0.2s;
-    }
-
-    .btn-nav:hover {
-      background: var(--accent-dk);
-    }
-
-    .hamburger {
-      display: none;
-      flex-direction: column;
-      gap: 5px;
-      cursor: pointer;
-      padding: 4px;
-      background: none;
-      border: none;
-    }
-
-    .hamburger span {
-      display: block;
-      width: 22px;
-      height: 2px;
-      background: #ffffff;
-      border-radius: 2px;
-    }
-
-    /* ─── HERO ─── */
-
-    .hero {
-      padding-top: calc(var(--nav) + 80px);
-      padding-bottom: 100px;
-      background: var(--bg);
-    }
-
-    .hero-inner {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 72px;
-      align-items: center;
-    }
-
-    .hero-label {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 0.78rem;
-      font-weight: 600;
-      letter-spacing: 0.09em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 20px;
-    }
-
-    .hero-label::before {
-      content: '';
-      display: block;
-      width: 18px;
-      height: 2px;
-      background: var(--accent);
-      border-radius: 2px;
-    }
-
-    .hero h1 {
-      font-family: var(--font-h);
-      font-size: clamp(2rem, 3.6vw, 3.1rem);
-      font-weight: 800;
-      line-height: 1.12;
-      letter-spacing: -0.025em;
-      color: var(--text);
-      margin-bottom: 22px;
-    }
-
-    .hero h1 span {
-      color: var(--accent);
-    }
-
-    .hero-desc {
-      font-size: 1.025rem;
-      color: var(--text-mid);
-      line-height: 1.75;
-      margin-bottom: 34px;
-      max-width: 460px;
-    }
-
-    .hero-actions {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      flex-wrap: wrap;
-      margin-bottom: 36px;
-    }
-
-    .btn-primary {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 13px 24px;
-      background: var(--accent);
-      color: #ffffff;
-      font-size: 0.925rem;
-      font-weight: 600;
-      font-family: var(--font-b);
-      border-radius: var(--r);
-      border: 2px solid var(--accent);
-      transition: background 0.2s, transform 0.15s;
-    }
-
-    .btn-primary:hover {
-      background: var(--accent-dk);
-      border-color: var(--accent-dk);
-      transform: translateY(-1px);
-    }
-
-    .btn-ghost {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 12px 22px;
-      background: transparent;
-      color: var(--text);
-      font-size: 0.925rem;
-      font-weight: 500;
-      border-radius: var(--r);
-      border: 2px solid var(--border);
-      transition: border-color 0.2s;
-    }
-
-    .btn-ghost:hover {
-      border-color: #aaaaaa;
-    }
-
-    .hero-trust {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-
-    .trust-item {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 0.82rem;
-      color: var(--text-light);
-      font-weight: 500;
-    }
-
-    .trust-check {
-      width: 16px;
-      height: 16px;
-      background: #dcfce7;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-    }
-
-    .trust-check svg {
-      color: #16a34a;
-    }
-
-    /* ─── HERO VISUAL PANEL ─── */
-
-    .hero-visual {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    .visual-card {
-      background: var(--bg-soft);
-      border: 1px solid var(--border);
-      border-radius: var(--r-lg);
-      padding: 18px 20px;
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      transition: border-color 0.2s, box-shadow 0.2s;
-    }
-
-    .visual-card:hover {
-      border-color: #cccccc;
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
-    }
-
-    .vc-icon {
-      width: 38px;
-      height: 38px;
-      background: var(--bg-dark);
-      border-radius: 8px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1rem;
-      flex-shrink: 0;
-    }
-
-    .vc-text {
-      flex: 1;
-    }
-
-    .vc-text strong {
-      display: block;
-      font-size: 0.875rem;
-      font-weight: 600;
-      color: var(--text);
-      margin-bottom: 2px;
-    }
-
-    .vc-text span {
-      font-size: 0.8rem;
-      color: var(--text-light);
-    }
-
-    .vc-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-      background: #f0fdf4;
-      border: 1px solid #bbf7d0;
-      border-radius: 100px;
-      padding: 3px 10px;
-      font-size: 0.72rem;
-      font-weight: 600;
-      color: #15803d;
-      flex-shrink: 0;
-    }
-
-    .vc-badge::before {
-      content: '';
-      width: 5px;
-      height: 5px;
-      background: #22c55e;
-      border-radius: 50%;
-    }
-
-    /* ─── SECTIONS ─── */
-
-    .section {
-      padding: 96px 0;
-    }
-
-    .section-soft {
-      background: var(--bg-soft);
-    }
-
-    .section-dark {
-      background: var(--bg-dark);
-    }
-
-    .section-tag {
-      display: inline-block;
-      font-size: 0.73rem;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 10px;
-    }
-
-    .section-dark .section-tag {
-      color: #6b9fff;
-    }
-
-    .section-title {
-      font-family: var(--font-h);
-      font-size: clamp(1.55rem, 2.8vw, 2.3rem);
-      font-weight: 800;
-      color: var(--text);
-      line-height: 1.15;
-      letter-spacing: -0.02em;
-      margin-bottom: 12px;
-    }
-
-    .section-dark .section-title {
-      color: #ffffff;
-    }
-
-    .section-sub {
-      font-size: 0.975rem;
-      color: var(--text-mid);
-      max-width: 560px;
-      line-height: 1.75;
-    }
-
-    .section-dark .section-sub {
-      color: #777777;
-    }
-
-    .section-header {
-      margin-bottom: 52px;
-    }
-
-    .section-header.centered {
-      text-align: center;
-    }
-
-    .section-header.centered .section-sub {
-      margin: 0 auto;
-    }
-
-    /* ─── PROBLEMAS ─── */
-
-    .problems-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 14px;
-    }
-
-    .problem-card {
-      background: var(--bg);
-      border: 1px solid var(--border);
-      border-radius: var(--r-lg);
-      padding: 26px 24px;
-      display: flex;
-      gap: 16px;
-      align-items: flex-start;
-      transition: border-color 0.2s, box-shadow 0.2s;
-    }
-
-    .problem-card:hover {
-      border-color: #cccccc;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-    }
-
-    .prob-icon {
-      font-size: 1.4rem;
-      line-height: 1;
-      flex-shrink: 0;
-      margin-top: 2px;
-    }
-
-    .problem-card h3 {
-      font-family: var(--font-h);
-      font-size: 0.95rem;
-      font-weight: 700;
-      color: var(--text);
-      margin-bottom: 5px;
-    }
-
-    .problem-card p {
-      font-size: 0.865rem;
-      color: var(--text-mid);
-      line-height: 1.65;
-    }
-
-    /* ─── SERVICIOS ─── */
-
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 14px;
-    }
-
-    .service-card {
-      background: var(--bg-soft);
-      border: 1px solid var(--border);
-      border-radius: var(--r-lg);
-      padding: 30px 26px;
-      transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
-    }
-
-    .service-card:hover {
-      border-color: var(--accent);
-      box-shadow: 0 6px 28px rgba(26, 86, 240, 0.08);
-      transform: translateY(-3px);
-    }
-
-    .svc-num {
-      font-size: 0.7rem;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--text-light);
-      margin-bottom: 14px;
-    }
-
-    .service-card h3 {
-      font-family: var(--font-h);
-      font-size: 1.1rem;
-      font-weight: 700;
-      color: var(--text);
-      margin-bottom: 9px;
-    }
-
-    .service-card h3 a {
-      color: inherit;
-      transition: color 0.2s;
-    }
-
-    .service-card h3 a:hover {
-      color: var(--accent);
-    }
-
-    .service-card p {
-      font-size: 0.875rem;
-      color: var(--text-mid);
-      line-height: 1.7;
-      margin-bottom: 20px;
-    }
-
-    .svc-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-      font-size: 0.84rem;
-      font-weight: 600;
-      color: var(--accent);
-      transition: gap 0.2s;
-    }
-
-    .svc-link:hover {
-      gap: 8px;
-    }
-
-    /* ─── SECTORES ─── */
-
-    .sectors-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(195px, 1fr));
-      gap: 12px;
-    }
-
-    .sector-card {
-      background: #1a1a1a;
-      border: 1px solid #222222;
-      border-radius: var(--r-lg);
-      padding: 24px 20px;
-      transition: border-color 0.2s, transform 0.2s;
-    }
-
-    .sector-card:hover {
-      border-color: #3a3a3a;
-      transform: translateY(-3px);
-    }
-
-    .sec-emoji {
-      font-size: 1.5rem;
-      display: block;
-      margin-bottom: 12px;
-    }
-
-    .sector-card h3 {
-      font-family: var(--font-h);
-      font-size: 0.95rem;
-      font-weight: 700;
-      color: #ffffff;
-      margin-bottom: 7px;
-    }
-
-    .sector-card h3 a {
-      color: inherit;
-      transition: color 0.2s;
-    }
-
-    .sector-card h3 a:hover {
-      color: #6b9fff;
-    }
-
-    .sector-card p {
-      font-size: 0.84rem;
-      color: #666666;
-      line-height: 1.6;
-    }
-
-    /* ─── PROCESO ─── */
-
-    .process-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 0;
-      position: relative;
-    }
-
-    .process-grid::after {
-      content: '';
-      position: absolute;
-      top: 26px;
-      left: calc(12.5% + 16px);
-      right: calc(12.5% + 16px);
-      height: 1px;
-      background: var(--border);
-    }
-
-    .proc-step {
-      padding: 0 18px;
-      position: relative;
-      z-index: 1;
-    }
-
-    .step-dot {
-      width: 52px;
-      height: 52px;
-      background: var(--bg);
-      border: 2px solid var(--border);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: var(--font-h);
-      font-size: 0.95rem;
-      font-weight: 800;
-      color: var(--accent);
-      margin-bottom: 20px;
-    }
-
-    .proc-step h3 {
-      font-family: var(--font-h);
-      font-size: 0.925rem;
-      font-weight: 700;
-      color: var(--text);
-      margin-bottom: 7px;
-    }
-
-    .proc-step p {
-      font-size: 0.845rem;
-      color: var(--text-mid);
-      line-height: 1.65;
-    }
-
-    /* ─── BLOG ─── */
-
-    .blog-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 14px;
-    }
-
-    .blog-card {
-      display: block;
-      background: var(--bg);
-      border: 1px solid var(--border);
-      border-radius: var(--r-lg);
-      padding: 28px 26px;
-      transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
-      text-decoration: none;
-    }
-
-    .blog-card:hover {
-      border-color: var(--accent);
-      box-shadow: 0 6px 28px rgba(26, 86, 240, 0.07);
-      transform: translateY(-3px);
-    }
-
-    .blog-tag {
-      display: inline-block;
-      font-size: 0.7rem;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--accent);
-      background: rgba(26, 86, 240, 0.07);
-      border: 1px solid rgba(26, 86, 240, 0.15);
-      border-radius: 100px;
-      padding: 3px 10px;
-      margin-bottom: 14px;
-    }
-
-    .blog-card h3 {
-      font-family: var(--font-h);
-      font-size: 1.05rem;
-      font-weight: 700;
-      color: var(--text);
-      margin-bottom: 10px;
-      line-height: 1.3;
-    }
-
-    .blog-card p {
-      font-size: 0.865rem;
-      color: var(--text-mid);
-      line-height: 1.65;
-      margin-bottom: 18px;
-    }
-
-    .blog-link {
-      font-size: 0.84rem;
-      font-weight: 600;
-      color: var(--accent);
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-      transition: gap 0.2s;
-    }
-
-    .blog-link:hover {
-      gap: 8px;
-    }
-
-    /* ─── CTA ─── */
-
-    .cta-block {
-      background: var(--bg-dark);
-      border-radius: var(--r-lg);
-      padding: 72px 48px;
-      text-align: center;
-    }
-
-    .cta-block h2 {
-      font-family: var(--font-h);
-      font-size: clamp(1.55rem, 3vw, 2.3rem);
-      font-weight: 800;
-      color: #ffffff;
-      letter-spacing: -0.02em;
-      margin-bottom: 14px;
-    }
-
-    .cta-block p {
-      font-size: 0.975rem;
-      color: #777777;
-      max-width: 490px;
-      margin: 0 auto 32px;
-      line-height: 1.7;
-    }
-
-    .cta-actions {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-
-    .btn-wa {
-      display: inline-flex;
-      align-items: center;
-      gap: 9px;
-      padding: 13px 24px;
-      background: #25d366;
-      color: #ffffff;
-      font-weight: 600;
-      font-size: 0.925rem;
-      border-radius: var(--r);
-      transition: background 0.2s, transform 0.15s;
-    }
-
-    .btn-wa:hover {
-      background: #1fb958;
-      transform: translateY(-1px);
-    }
-
-    .btn-mail {
-      display: inline-flex;
-      align-items: center;
-      gap: 7px;
-      padding: 12px 22px;
-      background: transparent;
-      color: #999999;
-      font-size: 0.925rem;
-      font-weight: 500;
-      border: 2px solid #222222;
-      border-radius: var(--r);
-      transition: border-color 0.2s, color 0.2s;
-    }
-
-    .btn-mail:hover {
-      border-color: #444444;
-      color: #ffffff;
-    }
-
-    /* ─── FOOTER ─── */
-
-    footer {
-      background: var(--bg-dark);
-      border-top: 1px solid var(--border-dk);
-      padding: 56px 0 28px;
-    }
-
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 1.4fr 1fr 1fr 1fr 1fr;
-      gap: 32px;
-      margin-bottom: 44px;
-    }
-
-    .footer-brand img {
-      height: 34px;
-      width: auto;
-      margin-bottom: 14px;
-    }
-
-    .footer-brand p {
-      font-size: 0.845rem;
-      color: #555555;
-      line-height: 1.65;
-      max-width: 210px;
-    }
-
-    .footer-col h4 {
-      font-size: 0.73rem;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: #ffffff;
-      margin-bottom: 14px;
-    }
-
-    .footer-col ul {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 9px;
-    }
-
-    .footer-col ul a {
-      font-size: 0.86rem;
-      color: #555555;
-      transition: color 0.2s;
-    }
-
-    .footer-col ul a:hover {
-      color: #cccccc;
-    }
-
-    .footer-bottom {
-      border-top: 1px solid var(--border-dk);
-      padding-top: 22px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    .footer-bottom p,
-    .footer-bottom a {
-      font-size: 0.79rem;
-      color: #444444;
-    }
-
-    .footer-bottom a:hover {
-      color: #888888;
-    }
-
-    /* ─── ANIMACIONES ─── */
-
-    .fade-up {
-      opacity: 0;
-      transform: translateY(22px);
-      transition: opacity 0.55s ease, transform 0.55s ease;
-    }
-
-    .fade-up.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
+      --n0:#0d1526; --n1:#111d35; --n2:#162040; --n3:#1c2a52; --n4:#243162;
+      --gold:#f5a820; --gold2:#e09510; --gold3:#fff0cc;
+      --cream:#f5f0e8; --cream2:#ede7d9;
+      --text:#e8e4dc; --text2:#a0a8b8; --text3:#5a6380;
+      --fh:'Outfit',sans-serif; --fi:'Crimson Pro',serif;
+      --max:1100px; --nav:68px; --r:10px; --rl:18px;
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--n1); color: var(--text); font-family: var(--fh); font-size: 16px; line-height: 1.65; -webkit-font-smoothing: antialiased; }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+    .wrap { max-width: var(--max); margin: 0 auto; padding: 0 36px; }
+
+    /* NAV */
+    .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; height: var(--nav); background: rgba(13,21,38,0.97); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(245,168,32,0.12); display: flex; align-items: center; }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; width: 100%; max-width: var(--max); margin: 0 auto; padding: 0 36px; }
+    .nav-logo img { height: 48px; width: auto; }
+    .nav-links { display: flex; align-items: center; gap: 34px; }
+    .nav-links a { font-size: .875rem; font-weight: 500; color: var(--text3); transition: color .2s; }
+    .nav-links a:hover { color: var(--gold); }
+    .btn-nav { display: inline-flex; align-items: center; gap: 7px; padding: 9px 20px; background: var(--gold); color: var(--n0) !important; font-weight: 700; font-size: .83rem; border-radius: 8px; transition: background .2s, transform .15s; }
+    .btn-nav:hover { background: var(--gold2); transform: translateY(-1px); }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
+    .hamburger span { display: block; width: 22px; height: 2px; background: var(--text); border-radius: 2px; }
+
+    /* HERO */
+    .hero { background: var(--n0); padding-top: calc(var(--nav) + 88px); padding-bottom: 0; position: relative; overflow: hidden; }
+    .hero::before { content: ''; position: absolute; inset: 0; background-image: radial-gradient(rgba(245,168,32,.08) 1px, transparent 1px); background-size: 36px 36px; }
+    .hero::after { content: ''; position: absolute; top: -100px; right: -100px; width: 600px; height: 600px; background: radial-gradient(ellipse at top right, rgba(245,168,32,.07) 0%, transparent 65%); pointer-events: none; }
+    .hero-inner { position: relative; z-index: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: end; }
+    .hero-text { padding-bottom: 88px; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 8px; font-size: .72rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--gold); margin-bottom: 28px; }
+    .eyebrow::before { content: ''; display: block; width: 24px; height: 2px; background: var(--gold); border-radius: 2px; }
+    .hero h1 { font-size: clamp(2.6rem,4.2vw,3.8rem); font-weight: 800; line-height: 1.03; letter-spacing: -.03em; color: #fff; margin-bottom: 6px; }
+    .hero h1 .acc { display: block; font-family: var(--fi); font-style: italic; font-weight: 300; font-size: clamp(2.2rem,3.6vw,3.2rem); color: var(--gold); letter-spacing: 0; }
+    .hrule { width: 100%; height: 1px; background: linear-gradient(90deg, var(--gold) 0%, rgba(245,168,32,.08) 70%, transparent 100%); margin: 26px 0; }
+    .hero-desc { font-size: 1rem; font-weight: 300; color: var(--text2); line-height: 1.8; margin-bottom: 38px; max-width: 440px; }
+    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 44px; }
+    .btn-gold { display: inline-flex; align-items: center; gap: 8px; padding: 14px 26px; background: var(--gold); color: var(--n0); font-size: .9rem; font-weight: 700; border-radius: var(--r); transition: background .2s, transform .15s; }
+    .btn-gold:hover { background: var(--gold2); transform: translateY(-1px); }
+    .btn-ghost { display: inline-flex; align-items: center; gap: 8px; padding: 13px 24px; background: transparent; color: var(--text2); font-size: .9rem; font-weight: 500; border-radius: var(--r); border: 1px solid rgba(255,255,255,.12); transition: border-color .2s, color .2s; }
+    .btn-ghost:hover { border-color: rgba(245,168,32,.4); color: var(--gold); }
+    .trust { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+    .trust-p { display: flex; align-items: center; gap: 6px; font-size: .78rem; font-weight: 500; color: var(--text3); }
+    .trust-d { width: 5px; height: 5px; background: var(--gold); border-radius: 50%; opacity: .7; }
+    .trust-s { color: rgba(255,255,255,.08); }
+
+    /* DASHBOARD */
+    .hero-vis { align-self: end; }
+    .dash { background: rgba(255,255,255,.03); border: 1px solid rgba(245,168,32,.12); border-bottom: none; border-radius: 18px 18px 0 0; padding: 28px; }
+    .dash-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 22px; }
+    .dash-label { font-size: .7rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--text3); }
+    .dash-live { display: flex; align-items: center; gap: 6px; font-size: .7rem; font-weight: 600; color: #4ade80; }
+    .dash-live::before { content: ''; width: 6px; height: 6px; background: #4ade80; border-radius: 50%; animation: blink 2s ease-in-out infinite; }
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:.3} }
+    .kpis { display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; margin-bottom: 20px; }
+    .kpi { background: rgba(245,168,32,.06); border: 1px solid rgba(245,168,32,.12); border-radius: 12px; padding: 14px; }
+    .kpi-v { font-size: 1.55rem; font-weight: 800; color: #fff; line-height: 1; margin-bottom: 4px; }
+    .kpi-v sup { font-size: .66rem; color: var(--gold); font-weight: 700; vertical-align: top; margin-top: 4px; margin-left: 2px; }
+    .kpi-l { font-size: .7rem; color: var(--text3); }
+    .chart-wrap { margin-bottom: 20px; }
+    .chart-title { font-size: .7rem; color: var(--text3); margin-bottom: 10px; }
+    .bars { display: flex; align-items: flex-end; gap: 5px; height: 52px; }
+    .bar { flex: 1; border-radius: 3px 3px 0 0; background: rgba(245,168,32,.12); min-height: 4px; transition: background .2s; }
+    .bar:hover,.bar.hi { background: rgba(245,168,32,.45); }
+    .bar.top { background: var(--gold); }
+    .rows { display: flex; flex-direction: column; gap: 8px; }
+    .row { display: flex; align-items: center; gap: 10px; background: rgba(255,255,255,.02); border: 1px solid rgba(255,255,255,.05); border-radius: 10px; padding: 10px 14px; }
+    .row-ico { width: 30px; height: 30px; flex-shrink: 0; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: .85rem; background: rgba(245,168,32,.1); }
+    .row-b { flex: 1; }
+    .row-b strong { display: block; font-size: .8rem; font-weight: 500; color: var(--text); }
+    .row-b span { font-size: .7rem; color: var(--text3); }
+    .badge { font-size: .66rem; font-weight: 700; padding: 3px 9px; border-radius: 100px; }
+    .b-ok { background: rgba(74,222,128,.1); color: #4ade80; border: 1px solid rgba(74,222,128,.2); }
+    .b-w { background: rgba(245,168,32,.1); color: var(--gold); border: 1px solid rgba(245,168,32,.2); }
+
+    /* GOLD BAND */
+    .band { background: var(--gold); padding: 15px 0; overflow: hidden; }
+    .band-inner { display: flex; gap: 52px; align-items: center; width: max-content; animation: scroll 24s linear infinite; }
+    @keyframes scroll { from{transform:translateX(0)} to{transform:translateX(-50%)} }
+    .band-item { display: flex; align-items: center; gap: 10px; font-size: .78rem; font-weight: 700; color: var(--n0); text-transform: uppercase; letter-spacing: .1em; white-space: nowrap; }
+    .band-item::before { content: '◆'; font-size: .5rem; opacity: .4; }
+
+    /* SECTIONS */
+    .section { padding: 96px 0; }
+    .s-n0 { background: var(--n0); }
+    .s-n1 { background: var(--n1); }
+    .s-n2 { background: var(--n2); }
+    .s-n3 { background: var(--n3); }
+    .s-cr { background: var(--cream); }
+    .s-cr2 { background: var(--cream2); }
+
+    .tag { display: inline-block; font-size: .7rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
+    .s-cr .tag, .s-cr2 .tag { color: var(--n3); }
+    .sh { font-size: clamp(1.75rem,3vw,2.5rem); font-weight: 800; letter-spacing: -.022em; line-height: 1.1; color: #fff; margin-bottom: 14px; }
+    .s-cr .sh, .s-cr2 .sh { color: var(--n0); }
+    .sb { font-size: .975rem; color: var(--text2); line-height: 1.8; max-width: 520px; font-weight: 300; }
+    .s-cr .sb, .s-cr2 .sb { color: var(--n3); }
+    .shead { margin-bottom: 56px; }
+    .shead.center { text-align: center; }
+    .shead.center .sb { margin: 0 auto; }
+
+    /* PROBLEMAS */
+    .prob-layout { display: grid; grid-template-columns: 1fr 1.5fr; gap: 64px; align-items: start; }
+    .grule { width: 48px; height: 3px; background: var(--gold); border-radius: 2px; margin: 18px 0; }
+    .prob-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .pc { background: rgba(255,255,255,.03); border: 1px solid rgba(255,255,255,.06); border-radius: var(--rl); padding: 26px 22px; transition: border-color .25s, transform .25s; }
+    .pc:hover { border-color: rgba(245,168,32,.35); transform: translateY(-3px); }
+    .pc-num { font-size: .65rem; font-weight: 700; letter-spacing: .1em; color: var(--text3); text-transform: uppercase; margin-bottom: 14px; }
+    .pc-ico { font-size: 1.5rem; margin-bottom: 12px; display: block; }
+    .pc h3 { font-size: .95rem; font-weight: 700; color: #fff; margin-bottom: 7px; }
+    .pc p { font-size: .845rem; color: var(--text2); line-height: 1.7; font-weight: 300; }
+
+    /* SERVICIOS */
+    .svc-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+    .sc { background: #fff; border: 1px solid var(--cream2); border-radius: var(--rl); padding: 30px 26px; position: relative; overflow: hidden; transition: border-color .25s, box-shadow .25s, transform .25s; }
+    .sc::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px; background: var(--gold); transform: scaleX(0); transform-origin: left; transition: transform .3s; }
+    .sc:hover { border-color: #c8bfa8; box-shadow: 0 8px 28px rgba(28,42,82,.12); transform: translateY(-4px); }
+    .sc:hover::after { transform: scaleX(1); }
+    .sc-num { font-size: .65rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: #a0a8b8; margin-bottom: 16px; }
+    .sc h3 { font-size: 1rem; font-weight: 700; color: var(--n0); margin-bottom: 10px; }
+    .sc p { font-size: .865rem; color: #5a6380; line-height: 1.75; margin-bottom: 22px; font-weight: 300; }
+    .sc-link { display: inline-flex; align-items: center; gap: 5px; font-size: .82rem; font-weight: 700; color: var(--n3); transition: gap .2s, color .2s; }
+    .sc-link:hover { gap: 9px; color: var(--gold2); }
+    .sc:nth-child(4) { grid-column: 1; }
+    .sc:nth-child(5) { grid-column: 2; }
+
+    /* SECTORES */
+    .sec-grid { display: grid; grid-template-columns: repeat(5,1fr); gap: 12px; }
+    .secc { border-radius: var(--rl); padding: 28px 20px; transition: background .25s, border-color .25s, transform .25s; }
+    .secc-link { display: block; background: rgba(255,255,255,.03); border: 1px solid rgba(255,255,255,.06); border-radius: var(--rl); padding: 28px 20px; transition: background .25s, border-color .25s, transform .25s; text-decoration: none; }
+    .secc-link:hover { background: rgba(245,168,32,.07); border-color: rgba(245,168,32,.3); transform: translateY(-4px); }
+    .sec-ico { width: 46px; height: 46px; background: rgba(245,168,32,.1); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.35rem; margin-bottom: 16px; }
+    .secc-link h3 { font-size: .95rem; font-weight: 700; color: #fff; margin-bottom: 7px; }
+    .secc-link p { font-size: .82rem; color: var(--text2); line-height: 1.65; font-weight: 300; }
+
+    /* PROCESO */
+    .proc { display: grid; grid-template-columns: repeat(4,1fr); gap: 0; position: relative; }
+    .proc::before { content: ''; position: absolute; top: 27px; left: 14%; right: 14%; height: 1px; background: linear-gradient(90deg, var(--gold) 0%, rgba(245,168,32,.15) 100%); }
+    .pstep { padding: 0 18px; position: relative; z-index: 1; }
+    .pdot { width: 54px; height: 54px; background: var(--n1); border: 2px solid rgba(245,168,32,.3); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: .88rem; font-weight: 800; color: var(--gold); margin-bottom: 22px; transition: border-color .2s, background .2s; }
+    .pstep:first-child .pdot { background: var(--gold); border-color: var(--gold); color: var(--n0); }
+    .pstep:hover .pdot { border-color: var(--gold); background: rgba(245,168,32,.08); }
+    .pstep h3 { font-size: .95rem; font-weight: 700; color: #fff; margin-bottom: 7px; }
+    .pstep p { font-size: .845rem; color: var(--text2); line-height: 1.65; font-weight: 300; }
+
+    /* BLOG */
+    .blog-grid { display: grid; grid-template-columns: 1.3fr 1fr 1fr; gap: 14px; }
+    .bc { background: #fff; border: 1px solid var(--cream2); border-radius: var(--rl); padding: 28px 24px; display: flex; flex-direction: column; transition: border-color .25s, box-shadow .25s, transform .25s; }
+    .bc:hover { border-color: #c0b8a8; box-shadow: 0 8px 28px rgba(28,42,82,.1); transform: translateY(-3px); }
+    .bc.feat { background: var(--n0); border: 1px solid rgba(245,168,32,.15); }
+    .bc.feat:hover { border-color: rgba(245,168,32,.35); }
+    .bchip { display: inline-block; font-size: .67rem; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; padding: 4px 10px; border-radius: 6px; margin-bottom: 16px; }
+    .cn { background: rgba(245,168,32,.12); color: var(--gold); }
+    .cg { background: var(--cream2); color: var(--n3); }
+    .bc h3 { font-size: 1.02rem; font-weight: 700; color: var(--n0); margin-bottom: 10px; line-height: 1.25; flex: 1; }
+    .bc.feat h3 { color: #fff; font-size: 1.1rem; }
+    .bc p { font-size: .855rem; color: #5a6380; line-height: 1.7; margin-bottom: 18px; font-weight: 300; }
+    .bc.feat p { color: var(--text2); }
+    .bl { display: inline-flex; align-items: center; gap: 5px; font-size: .82rem; font-weight: 700; color: var(--n3); margin-top: auto; transition: gap .2s; }
+    .bc.feat .bl { color: var(--gold); }
+    .bl:hover { gap: 9px; }
+
+    /* CTA */
+    .cta { background: var(--n2); border: 1px solid rgba(245,168,32,.15); border-radius: var(--rl); padding: 72px 56px; display: grid; grid-template-columns: 1fr auto; gap: 48px; align-items: center; position: relative; overflow: hidden; }
+    .cta::before { content: ''; position: absolute; right: -60px; bottom: -60px; width: 320px; height: 320px; background: radial-gradient(circle, rgba(245,168,32,.12) 0%, transparent 65%); }
+    .cta::after { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--gold) 0%, rgba(245,168,32,.15) 100%); }
+    .cta-t { position: relative; }
+    .cta-t h2 { font-size: clamp(1.6rem,2.8vw,2.3rem); font-weight: 800; letter-spacing: -.022em; line-height: 1.1; color: #fff; margin-bottom: 14px; }
+    .cta-t h2 em { font-style: italic; font-family: var(--fi); font-weight: 300; color: var(--gold); }
+    .cta-t p { font-size: .975rem; color: var(--text2); font-weight: 300; }
+    .cta-btns { display: flex; flex-direction: column; gap: 10px; position: relative; flex-shrink: 0; }
+    .btn-wa { display: inline-flex; align-items: center; gap: 9px; padding: 15px 26px; background: #25d366; color: #fff; font-weight: 700; font-size: .9rem; border-radius: var(--r); white-space: nowrap; transition: background .2s, transform .15s; }
+    .btn-wa:hover { background: #1db558; transform: translateY(-1px); }
+    .btn-mail { display: inline-flex; align-items: center; gap: 7px; padding: 14px 24px; background: transparent; color: var(--text2); font-size: .875rem; font-weight: 400; border: 1px solid rgba(255,255,255,.1); border-radius: var(--r); white-space: nowrap; transition: border-color .2s, color .2s; }
+    .btn-mail:hover { border-color: rgba(245,168,32,.4); color: var(--gold); }
+
+    /* FOOTER */
+    footer { background: var(--n0); border-top: 1px solid rgba(245,168,32,.1); padding: 64px 0 28px; }
+    .fg { display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 48px; }
+    .fb img { height: 48px; width: auto; margin-bottom: 16px; }
+    .fb p { font-size: .83rem; color: var(--text3); line-height: 1.7; max-width: 210px; font-weight: 300; }
+    .fc h4 { font-size: .68rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--text3); margin-bottom: 16px; }
+    .fc ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .fc ul a { font-size: .85rem; color: var(--text3); transition: color .2s; font-weight: 300; }
+    .fc ul a:hover { color: var(--gold); }
+    .fbot { border-top: 1px solid rgba(255,255,255,.05); padding-top: 22px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+    .fbot p, .fbot a { font-size: .78rem; color: var(--text3); font-weight: 300; }
+    .fbot a:hover { color: var(--gold); }
+
+    /* REVEAL */
+    .rv { opacity: 0; transform: translateY(22px); transition: opacity .6s ease, transform .6s ease; }
+    .rv.on { opacity: 1; transform: translateY(0); }
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
-      .fade-up { opacity: 1; transform: none; transition: none; }
-      .btn-primary, .btn-ghost, .btn-wa, .service-card, .blog-card { transition: none; }
+      .rv { opacity: 1; transform: none; transition: none; }
+      .band-inner { animation: none; }
     }
 
-    /* ─── RESPONSIVE ─── */
-
+    /* RESPONSIVE */
+    @media (max-width: 960px) {
+      .hero-inner { grid-template-columns: 1fr; }
+      .hero-text { padding-bottom: 52px; }
+      .hero-vis { display: none; }
+      .prob-layout { grid-template-columns: 1fr; gap: 36px; }
+      .svc-grid { grid-template-columns: 1fr 1fr; }
+      .sc:nth-child(4), .sc:nth-child(5) { grid-column: auto; }
+      .sec-grid { grid-template-columns: repeat(3,1fr); }
+      .blog-grid { grid-template-columns: 1fr 1fr; }
+      .bc:first-child { grid-column: span 2; }
+      .cta { grid-template-columns: 1fr; padding: 48px 32px; }
+      .fg { grid-template-columns: 1fr 1fr; }
+    }
     @media (max-width: 768px) {
-
-      .nav-links {
-        display: none;
-      }
-
-      .nav-links.open {
-        display: flex;
-        flex-direction: column;
-        position: fixed;
-        top: var(--nav);
-        left: 0;
-        right: 0;
-        background: var(--bg-dark);
-        padding: 24px 28px;
-        gap: 20px;
-        border-bottom: 1px solid var(--border-dk);
-        align-items: flex-start;
-        z-index: 99;
-      }
-
-      .hamburger {
-        display: flex;
-      }
-
-      .hero-inner {
-        grid-template-columns: 1fr;
-        gap: 48px;
-      }
-
-      .problems-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .services-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .blog-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .process-grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 32px;
-      }
-
-      .process-grid::after {
-        display: none;
-      }
-
-      .cta-block {
-        padding: 48px 24px;
-      }
-
-      .footer-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-
+      .nav-links { display: none; }
+      .nav-links.open { display: flex; flex-direction: column; position: fixed; top: var(--nav); left: 0; right: 0; background: var(--n0); padding: 24px 36px; gap: 20px; border-bottom: 1px solid rgba(245,168,32,.1); align-items: flex-start; z-index: 99; }
+      .hamburger { display: flex; }
+      .proc { grid-template-columns: 1fr 1fr; }
+      .proc::before { display: none; }
     }
-
-    @media (max-width: 480px) {
-
-      .process-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .footer-grid {
-        grid-template-columns: 1fr;
-      }
-
+    @media (max-width: 520px) {
+      .wrap { padding: 0 20px; }
+      .svc-grid, .proc { grid-template-columns: 1fr; }
+      .sc:nth-child(4), .sc:nth-child(5) { grid-column: auto; }
+      .sec-grid { grid-template-columns: 1fr 1fr; }
+      .prob-grid { grid-template-columns: 1fr; }
+      .blog-grid { grid-template-columns: 1fr; }
+      .bc:first-child { grid-column: span 1; }
+      .fg { grid-template-columns: 1fr; }
     }
-
   </style>
 </head>
-
 <body>
 
-  <!-- NAVBAR -->
-  <header>
-    <nav class="navbar" aria-label="Navegación principal">
-      <div class="nav-inner">
-
-        <a href="/" class="nav-logo" aria-label="OAR Digital Solutions – Inicio">
-          <img src="assets/logo.png" alt="OAR Digital Solutions" />
-        </a>
-
-        <div class="nav-links" id="navLinks">
-          <a href="#servicios">Servicios</a>
-          <a href="#problemas">Problemas</a>
-          <a href="#sectores">Sectores</a>
-          <a href="#proceso">Proceso</a>
-          <a href="#blog">Blog</a>
-          <a href="https://wa.me/34644747610" target="_blank" rel="noopener" class="btn-nav">Contactar</a>
-        </div>
-
-        <button class="hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false">
-          <span></span><span></span><span></span>
-        </button>
-
+<header>
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="/" aria-label="OAR Digital Solutions">
+        <img src="assets/logo.png" alt="OAR Digital Solutions" style="height:48px;width:auto" />
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="#servicios">Servicios</a>
+        <a href="#problemas">Problemas</a>
+        <a href="sectores.html">Sectores</a>
+        <a href="#proceso">Proceso</a>
+        <a href="#blog">Blog</a>
+        <a href="contacto.html">Contacto</a>
+        <a href="https://wa.me/34644747610" target="_blank" rel="noopener" class="btn-nav">Contactar</a>
       </div>
-    </nav>
-  </header>
+      <button class="hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+</header>
 
-  <main>
+<main>
 
-    <!-- HERO -->
-    <section id="inicio" class="hero" aria-label="Presentación">
-      <div class="container">
-        <div class="hero-inner">
-
-          <div class="hero-text">
-            <div class="hero-label">Automatización empresarial</div>
-
-            <h1>
-              Tu empresa,<br />
-              funcionando sin<br />
-              <span>procesos manuales</span>
-            </h1>
-
-            <p class="hero-desc">
-              En <strong>OAR Digital Solutions</strong> desarrollamos software a medida, sistemas de gestión
-              y automatizaciones que eliminan el trabajo repetitivo y dan a tu empresa un control real del negocio.
-            </p>
-
-            <div class="hero-actions">
-              <a href="https://wa.me/34644747610" target="_blank" rel="noopener" class="btn-primary">
-                <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.025.507 3.934 1.395 5.61L0 24l6.545-1.367A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.015-1.375l-.36-.214-3.722.977.994-3.635-.234-.373A9.818 9.818 0 1112 21.818z"/></svg>
-                Diagnóstico gratuito
-              </a>
-              <a href="#servicios" class="btn-ghost">Ver servicios</a>
-            </div>
-
-            <div class="hero-trust">
-              <div class="trust-item">
-                <div class="trust-check">
-                  <svg width="9" height="9" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-                </div>
-                100% a medida
-              </div>
-              <div class="trust-item">
-                <div class="trust-check">
-                  <svg width="9" height="9" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-                </div>
-                Sin permanencia
-              </div>
-              <div class="trust-item">
-                <div class="trust-check">
-                  <svg width="9" height="9" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-                </div>
-                Diagnóstico gratis
-              </div>
-            </div>
-          </div>
-
-          <div class="hero-visual" aria-hidden="true">
-            <div class="visual-card">
-              <div class="vc-icon">📊</div>
-              <div class="vc-text">
-                <strong>Gestión de clientes centralizada</strong>
-                <span>Sin Excel, sin archivos perdidos</span>
-              </div>
-              <div class="vc-badge">Activo</div>
-            </div>
-            <div class="visual-card">
-              <div class="vc-icon">🔁</div>
-              <div class="vc-text">
-                <strong>Renovaciones automáticas</strong>
-                <span>Avisos sin intervención manual</span>
-              </div>
-              <div class="vc-badge">Activo</div>
-            </div>
-            <div class="visual-card">
-              <div class="vc-icon">📋</div>
-              <div class="vc-text">
-                <strong>Informes al instante</strong>
-                <span>Control real de tu negocio</span>
-              </div>
-              <div class="vc-badge">Activo</div>
-            </div>
-            <div class="visual-card">
-              <div class="vc-icon">⚙️</div>
-              <div class="vc-text">
-                <strong>Procesos internos automatizados</strong>
-                <span>Tu equipo hace lo que importa</span>
-              </div>
-              <div class="vc-badge">Activo</div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- PROBLEMAS -->
-    <section id="problemas" class="section section-soft" aria-labelledby="problemas-title">
-      <div class="container">
-        <div class="section-header fade-up">
-          <span class="section-tag">¿Te suena familiar?</span>
-          <h2 class="section-title" id="problemas-title">Problemas habituales en las empresas</h2>
-          <p class="section-sub">Si gestionas tu negocio con Excel, correos sueltos o procesos manuales, estás perdiendo tiempo y dinero cada día.</p>
-        </div>
-        <div class="problems-grid">
-          <div class="problem-card fade-up">
-            <div class="prob-icon">📊</div>
-            <div>
-              <h3>Gestión manual en Excel</h3>
-              <p>Hojas de cálculo desorganizadas que dificultan el control real de clientes, documentos y procesos internos.</p>
-            </div>
-          </div>
-          <div class="problem-card fade-up">
-            <div class="prob-icon">🔔</div>
-            <div>
-              <h3>Renovaciones y avisos olvidados</h3>
-              <p>Clientes que se pierden porque nadie avisó a tiempo. Tareas que se acumulan sin seguimiento claro.</p>
-            </div>
-          </div>
-          <div class="problem-card fade-up">
-            <div class="prob-icon">🔁</div>
-            <div>
-              <h3>Tareas repetitivas sin fin</h3>
-              <p>Acciones manuales que se repiten cada día y consumen horas que podrían dedicarse al negocio real.</p>
-            </div>
-          </div>
-          <div class="problem-card fade-up">
-            <div class="prob-icon">🗂️</div>
-            <div>
-              <h3>Información dispersa</h3>
-              <p>Datos en múltiples archivos y sistemas que hacen imposible tener una visión clara del negocio.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-<!-- SERVICIOS -->
-    <section id="servicios" class="section" aria-labelledby="servicios-title">
-      <div class="container">
-        <div class="section-header fade-up">
-          <span class="section-tag">Qué hacemos</span>
-          <h2 class="section-title" id="servicios-title">Soluciones digitales para tu empresa</h2>
-          <p class="section-sub">Desarrollamos herramientas adaptadas a la operativa real de tu negocio, no soluciones genéricas.</p>
-        </div>
-        <div class="services-grid services-grid-5">
-          <div class="service-card fade-up">
-            <div class="svc-num">Servicio 01</div>
-            <h3><a href="servicios/automatizacion-empresarial.html">Automatización empresarial</a></h3>
-            <p>Sistemas que automatizan tareas internas, eliminan procesos manuales y mejoran la eficiencia operativa sin cambiar tu forma de trabajar.</p>
-            <a href="servicios/automatizacion-empresarial.html" class="svc-link">Saber más →</a>
-          </div>
-          <div class="service-card fade-up">
-            <div class="svc-num">Servicio 02</div>
-            <h3><a href="servicios/automatizacion-procesos.html">Automatización de procesos</a></h3>
-            <p>Optimización de flujos de trabajo para reducir tareas repetitivas, minimizar errores humanos y mejorar la productividad del equipo.</p>
-            <a href="servicios/automatizacion-procesos.html" class="svc-link">Saber más →</a>
-          </div>
-          <div class="service-card fade-up">
-            <div class="svc-num">Servicio 03</div>
-            <h3><a href="servicios/software-a-medida.html">Software a medida</a></h3>
-            <p>Desarrollo de aplicaciones digitales personalizadas, diseñadas específicamente para los procesos y necesidades reales de tu negocio.</p>
-            <a href="servicios/software-a-medida.html" class="svc-link">Saber más →</a>
-          </div>
-          <div class="service-card fade-up">
-            <div class="svc-num">Servicio 04</div>
-            <h3><a href="servicios/sistemas-gestion-empresa.html">Sistemas de gestión</a></h3>
-            <p>Centraliza clientes, documentación y procesos internos en un único sistema adaptado a tu empresa, siempre accesible y organizado.</p>
-            <a href="servicios/sistemas-gestion-empresa.html" class="svc-link">Saber más →</a>
-          </div>
-          <div class="service-card fade-up">
-            <div class="svc-num">Servicio 05</div>
-            <h3><a href="servicios/desarrollo-web.html">Desarrollo web profesional</a></h3>
-            <p>Diseñamos y desarrollamos páginas web corporativas y escaparate para empresas, autónomos y negocios locales. Sin plantillas, con código limpio y SEO desde el primer día.</p>
-            <a href="servicios/desarrollo-web.html" class="svc-link">Saber más →</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTORES -->
-    <section id="sectores" class="section section-dark" aria-labelledby="sectores-title">
-      <div class="container">
-        <div class="section-header centered fade-up">
-          <span class="section-tag">Sectores</span>
-          <h2 class="section-title" id="sectores-title">Trabajamos con todo tipo de negocios</h2>
-          <p class="section-sub">Adaptamos cada solución a la operativa real del sector, porque cada negocio es diferente.</p>
-        </div>
-        <div class="sectors-grid">
-          <div class="sector-card fade-up">
-            <span class="sec-emoji">🏋️</span>
-            <h3><a href="sectores/software-para-gimnasios.html">Gimnasios</a></h3>
-            <p>Gestión de socios, cuotas, renovaciones automáticas y control administrativo completo.</p>
-          </div>
-          <div class="sector-card fade-up">
-            <span class="sec-emoji">🔧</span>
-            <h3><a href="sectores/software-para-talleres.html">Talleres</a></h3>
-            <p>Organización de clientes, trabajos, presupuestos y seguimiento de la operativa diaria.</p>
-          </div>
-          <div class="sector-card fade-up">
-            <span class="sec-emoji">🏪</span>
-            <h3><a href="sectores/software-para-comercios.html">Comercios</a></h3>
-            <p>Control de inventario, digitalización administrativa y automatización de tareas recurrentes.</p>
-          </div>
-          <div class="sector-card fade-up">
-            <span class="sec-emoji">💼</span>
-            <h3><a href="sectores/software-para-autonomos.html">Autónomos</a></h3>
-            <p>Automatización de tareas administrativas, gestión de clientes y organización del trabajo.</p>
-          </div>
-          <div class="sector-card fade-up">
-            <span class="sec-emoji">🏢</span>
-            <h3><a href="sectores/software-para-pymes.html">Pymes</a></h3>
-            <p>Digitalización completa de procesos internos para equipos en crecimiento que necesitan orden.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- PROCESO -->
-    <section id="proceso" class="section section-soft" aria-labelledby="proceso-title">
-      <div class="container">
-        <div class="section-header centered fade-up">
-          <span class="section-tag">Cómo trabajamos</span>
-          <h2 class="section-title" id="proceso-title">Un proceso claro, sin sorpresas</h2>
-          <p class="section-sub">Desde el primer análisis hasta el sistema funcionando, siempre sabrás en qué punto estamos.</p>
-        </div>
-        <div class="process-grid">
-          <div class="proc-step fade-up">
-            <div class="step-dot">01</div>
-            <h3>Análisis del negocio</h3>
-            <p>Estudiamos tus procesos actuales para detectar problemas reales y oportunidades de mejora concretas.</p>
-          </div>
-          <div class="proc-step fade-up">
-            <div class="step-dot">02</div>
-            <h3>Diseño de la solución</h3>
-            <p>Definimos una herramienta digital adaptada a tu operativa, sin funciones innecesarias.</p>
-          </div>
-          <div class="proc-step fade-up">
-            <div class="step-dot">03</div>
-            <h3>Desarrollo del sistema</h3>
-            <p>Construimos la solución con foco en resolver el problema real, no en tecnología por la tecnología.</p>
-          </div>
-          <div class="proc-step fade-up">
-            <div class="step-dot">04</div>
-            <h3>Evolución continua</h3>
-            <p>El sistema crece con tu negocio. Las herramientas evolucionan según tus necesidades reales.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- BLOG -->
-    <section id="blog" class="section" aria-labelledby="blog-title">
-      <div class="container">
-        <div class="section-header fade-up">
-          <span class="section-tag">Blog</span>
-          <h2 class="section-title" id="blog-title">Recursos sobre digitalización y automatización</h2>
-          <p class="section-sub">Guías prácticas para entender cómo mejorar la gestión y los procesos de tu negocio.</p>
-        </div>
-        <div class="blog-grid">
-          <a href="blog/automatizar-procesos-empresa.html" class="blog-card fade-up">
-            <div class="blog-tag">Automatización</div>
-            <h3>Cómo automatizar los procesos de una empresa: guía práctica</h3>
-            <p>Qué procesos automatizar primero, cómo hacerlo y qué beneficios obtiene tu negocio desde el primer día.</p>
-            <span class="blog-link">Leer artículo →</span>
+<!-- HERO -->
+<section id="inicio" class="hero">
+  <div class="wrap">
+    <div class="hero-inner">
+      <div class="hero-text rv">
+        <div class="eyebrow">Automatización empresarial</div>
+        <h1>Tu empresa,<br>sin trabajo<span class="acc">repetitivo.</span></h1>
+        <div class="hrule"></div>
+        <p class="hero-desc">Desarrollamos software a medida, sistemas de gestión y automatizaciones que eliminan el trabajo manual y dan a tu empresa un control real del negocio.</p>
+        <div class="hero-actions">
+          <a href="https://wa.me/34644747610" target="_blank" rel="noopener" class="btn-gold">
+            <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.025.507 3.934 1.395 5.61L0 24l6.545-1.367A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.015-1.375l-.36-.214-3.722.977.994-3.635-.234-.373A9.818 9.818 0 1112 21.818z"/></svg>
+            Diagnóstico gratuito
           </a>
-          <a href="blog/automatizar-renovaciones-clientes.html" class="blog-card fade-up">
-            <div class="blog-tag">Gestión de clientes</div>
-            <h3>Cómo automatizar las renovaciones de clientes y reducir bajas por olvido</h3>
-            <p>Cada cliente que se va porque nadie le avisó es un ingreso perdido. Cómo evitarlo con un sistema automático.</p>
-            <span class="blog-link">Leer artículo →</span>
-          </a>
-          <a href="blog/digitalizar-negocio.html" class="blog-card fade-up">
-            <div class="blog-tag">Digitalización</div>
-            <h3>Cómo digitalizar un negocio paso a paso: guía para pymes</h3>
-            <p>Por dónde empezar, qué priorizar y cómo hacerlo sin grandes inversiones ni cambios bruscos en la operativa.</p>
-            <span class="blog-link">Leer artículo →</span>
-          </a>
-          <a href="blog/software-gestion-clientes.html" class="blog-card fade-up">
-            <div class="blog-tag">Gestión de clientes</div>
-            <h3>Software de gestión de clientes para pymes: qué necesitas realmente</h3>
-            <p>Por qué los CRMs estándar no encajan bien en la mayoría de pymes y qué alternativa funciona mejor.</p>
-            <span class="blog-link">Leer artículo →</span>
-          </a>
+          <a href="#servicios" class="btn-ghost">Ver servicios →</a>
+        </div>
+        <div class="trust">
+          <div class="trust-p"><div class="trust-d"></div>100% a medida</div>
+          <span class="trust-s">·</span>
+          <div class="trust-p"><div class="trust-d"></div>Sin permanencia</div>
+          <span class="trust-s">·</span>
+          <div class="trust-p"><div class="trust-d"></div>Diagnóstico gratis</div>
         </div>
       </div>
-    </section>
-
-    <!-- CONTACTO -->
-    <section id="contacto" class="section section-soft" aria-labelledby="contacto-title">
-      <div class="container">
-        <div class="cta-block fade-up">
-          <h2 id="contacto-title">¿Listo para digitalizar tu empresa?</h2>
-          <p>Solicita un diagnóstico inicial gratuito y sin compromiso. Analizamos tu situación y te contamos exactamente qué podemos mejorar.</p>
-          <div class="cta-actions">
-            <a href="https://wa.me/34644747610" target="_blank" rel="noopener" class="btn-wa">
-              <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.025.507 3.934 1.395 5.61L0 24l6.545-1.367A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.015-1.375l-.36-.214-3.722.977.994-3.635-.234-.373A9.818 9.818 0 1112 21.818z"/></svg>
-              Solicitar diagnóstico gratuito
-            </a>
-            <a href="mailto:info@oar-digital.com" class="btn-mail">
-              ✉ info@oar-digital.com
-            </a>
+      <div class="hero-vis rv" aria-hidden="true">
+        <div class="dash">
+          <div class="dash-top"><div class="dash-label">Panel de gestión</div><div class="dash-live">Sistema activo</div></div>
+          <div class="kpis">
+            <div class="kpi"><div class="kpi-v">247<sup>↑12%</sup></div><div class="kpi-l">Clientes activos</div></div>
+            <div class="kpi"><div class="kpi-v">98%<sup style="color:#4ade80">✓</sup></div><div class="kpi-l">Renovaciones</div></div>
+            <div class="kpi"><div class="kpi-v">14h</div><div class="kpi-l" style="color:var(--gold)">Ahorradas/sem</div></div>
+          </div>
+          <div class="chart-wrap">
+            <div class="chart-title">Actividad — últimos 12 meses</div>
+            <div class="bars">
+              <div class="bar" style="height:28%"></div><div class="bar" style="height:45%"></div><div class="bar" style="height:38%"></div><div class="bar hi" style="height:60%"></div><div class="bar" style="height:48%"></div><div class="bar hi" style="height:72%"></div><div class="bar" style="height:58%"></div><div class="bar hi" style="height:80%"></div><div class="bar" style="height:65%"></div><div class="bar" style="height:78%"></div><div class="bar hi" style="height:88%"></div><div class="bar top" style="height:95%"></div>
+            </div>
+          </div>
+          <div class="rows">
+            <div class="row"><div class="row-ico">🔔</div><div class="row-b"><strong>Renovación automática enviada</strong><span>Cliente #247 · hace 2 min</span></div><span class="badge b-ok">OK</span></div>
+            <div class="row"><div class="row-ico">📋</div><div class="row-b"><strong>Informe mensual generado</strong><span>Octubre 2025 · listo</span></div><span class="badge b-ok">OK</span></div>
+            <div class="row"><div class="row-ico">⚙️</div><div class="row-b"><strong>3 tareas pendientes</strong><span>Requieren atención</span></div><span class="badge b-w">Revisar</span></div>
           </div>
         </div>
-      </div>
-    </section>
-
-  </main>
-
-  <!-- FOOTER -->
-  <footer>
-    <div class="container">
-      <div class="footer-grid">
-
-        <div class="footer-brand">
-          <img src="assets/logo.png" alt="OAR Digital Solutions" />
-          <p>Automatización empresarial y software a medida para pymes y autónomos en España.</p>
-        </div>
-
-        <div class="footer-col">
-          <h4>Servicios</h4>
-          <ul>
-            <li><a href="servicios/automatizacion-empresarial.html">Automatización empresarial</a></li>
-            <li><a href="servicios/automatizacion-procesos.html">Automatización de procesos</a></li>
-            <li><a href="servicios/software-a-medida.html">Software a medida</a></li>
-            <li><a href="servicios/sistemas-gestion-empresa.html">Sistemas de gestión</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-col">
-          <h4>Sectores</h4>
-          <ul>
-            <li><a href="sectores/software-para-gimnasios.html">Gimnasios</a></li>
-            <li><a href="sectores/software-para-talleres.html">Talleres</a></li>
-            <li><a href="sectores/software-para-comercios.html">Comercios</a></li>
-            <li><a href="sectores/software-para-autonomos.html">Autónomos</a></li>
-            <li><a href="sectores/software-para-pymes.html">Pymes</a></li>
-            <li><a href="sectores.html">Ver todos →</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-col">
-          <h4>Blog</h4>
-          <ul>
-            <li><a href="blog/automatizar-procesos-empresa.html">Automatizar procesos</a></li>
-            <li><a href="blog/automatizar-renovaciones-clientes.html">Automatizar renovaciones</a></li>
-            <li><a href="blog/digitalizar-negocio.html">Digitalizar un negocio</a></li>
-            <li><a href="blog/software-gestion-clientes.html">Gestión de clientes</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-col">
-          <h4>Contacto</h4>
-          <ul>
-            <li><a href="mailto:info@oar-digital.com">info@oar-digital.com</a></li>
-            <li><a href="https://wa.me/34644747610" target="_blank" rel="noopener">+34 644 747 610</a></li>
-          </ul>
-        </div>
-
-      </div>
-      <div class="footer-bottom">
-        <p>© 2026 OAR Digital Solutions. Todos los derechos reservados.</p>
-        <a href="/">oar-digital.com</a>
       </div>
     </div>
-  </footer>
+  </div>
+</section>
 
-  <script>
-    // Scroll reveal
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach((entry, i) => {
-        if (entry.isIntersecting) {
-          setTimeout(() => entry.target.classList.add('visible'), i * 65);
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.08 });
+<!-- BANDA DORADA -->
+<div class="band" aria-hidden="true">
+  <div class="band-inner">
+    <div class="band-item">Automatización empresarial</div><div class="band-item">Software a medida</div><div class="band-item">Sistemas de gestión</div><div class="band-item">Digitalización de procesos</div><div class="band-item">Desarrollo web profesional</div><div class="band-item">Automatización empresarial</div><div class="band-item">Software a medida</div><div class="band-item">Sistemas de gestión</div><div class="band-item">Digitalización de procesos</div><div class="band-item">Desarrollo web profesional</div><div class="band-item">Automatización empresarial</div><div class="band-item">Software a medida</div><div class="band-item">Sistemas de gestión</div><div class="band-item">Digitalización de procesos</div><div class="band-item">Desarrollo web profesional</div>
+  </div>
+</div>
 
-    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+<!-- PROBLEMAS -->
+<section id="problemas" class="section s-n2">
+  <div class="wrap">
+    <div class="prob-layout">
+      <div class="rv">
+        <span class="tag">¿Te suena familiar?</span>
+        <h2 class="sh">Problemas habituales en las empresas</h2>
+        <div class="grule"></div>
+        <p class="sb">Si gestionas tu negocio con Excel, correos sueltos o procesos manuales, estás perdiendo tiempo y dinero cada día.</p>
+      </div>
+      <div class="prob-grid">
+        <div class="pc rv"><div class="pc-num">01</div><span class="pc-ico">📊</span><h3>Gestión manual en Excel</h3><p>Hojas desorganizadas que dificultan el control real de clientes, documentos y procesos internos.</p></div>
+        <div class="pc rv"><div class="pc-num">02</div><span class="pc-ico">🔔</span><h3>Renovaciones olvidadas</h3><p>Clientes que se pierden porque nadie avisó a tiempo. Ingresos que se escapan por descuido.</p></div>
+        <div class="pc rv"><div class="pc-num">03</div><span class="pc-ico">🔁</span><h3>Tareas repetitivas sin fin</h3><p>Acciones manuales que se repiten cada día y consumen horas que podrían dedicarse al negocio.</p></div>
+        <div class="pc rv"><div class="pc-num">04</div><span class="pc-ico">🗂️</span><h3>Información dispersa</h3><p>Datos en múltiples archivos sin visión clara. Imposible tomar buenas decisiones así.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    // Hamburger menu
-    const btn = document.getElementById('hamburger');
-    const nav = document.getElementById('navLinks');
+<!-- SERVICIOS -->
+<section id="servicios" class="section s-cr">
+  <div class="wrap">
+    <div class="shead rv">
+      <span class="tag">Qué hacemos</span>
+      <h2 class="sh">Soluciones digitales para tu empresa</h2>
+      <p class="sb">Herramientas adaptadas a la operativa real de tu negocio, no soluciones genéricas.</p>
+    </div>
+    <div class="svc-grid">
+      <a href="servicios/automatizacion-empresarial.html" class="sc rv" style="display:block;text-decoration:none">
+        <div class="sc-num">Servicio 01</div>
+        <h3>Automatización empresarial</h3>
+        <p>Sistemas que automatizan tareas internas, eliminan procesos manuales y mejoran la eficiencia operativa sin cambiar tu forma de trabajar.</p>
+        <span class="sc-link">Saber más →</span>
+      </a>
+      <a href="servicios/automatizacion-procesos.html" class="sc rv" style="display:block;text-decoration:none">
+        <div class="sc-num">Servicio 02</div>
+        <h3>Automatización de procesos</h3>
+        <p>Optimización de flujos de trabajo para reducir tareas repetitivas, minimizar errores y mejorar la productividad del equipo.</p>
+        <span class="sc-link">Saber más →</span>
+      </a>
+      <a href="servicios/software-a-medida.html" class="sc rv" style="display:block;text-decoration:none">
+        <div class="sc-num">Servicio 03</div>
+        <h3>Software a medida</h3>
+        <p>Aplicaciones digitales personalizadas diseñadas específicamente para los procesos reales de tu negocio. Sin soluciones genéricas.</p>
+        <span class="sc-link">Saber más →</span>
+      </a>
+      <a href="servicios/sistemas-gestion-empresa.html" class="sc rv" style="display:block;text-decoration:none">
+        <div class="sc-num">Servicio 04</div>
+        <h3>Sistemas de gestión</h3>
+        <p>Centraliza clientes, documentación y procesos internos en un único sistema adaptado a tu empresa. Siempre organizado y accesible.</p>
+        <span class="sc-link">Saber más →</span>
+      </a>
+      <a href="servicios/desarrollo-web.html" class="sc rv" style="display:block;text-decoration:none">
+        <div class="sc-num">Servicio 05</div>
+        <h3>Desarrollo web profesional</h3>
+        <p>Webs corporativas para empresas y autónomos. Código limpio, sin plantillas, con SEO desde el primer día.</p>
+        <span class="sc-link">Saber más →</span>
+      </a>
+    </div>
+  </div>
+</section>
 
-    btn.addEventListener('click', () => {
-      const open = nav.classList.toggle('open');
-      btn.setAttribute('aria-expanded', open);
-    });
+<!-- SECTORES -->
+<section id="sectores" class="section s-n3">
+  <div class="wrap">
+    <div class="shead center rv">
+      <span class="tag">Sectores</span>
+      <h2 class="sh">Trabajamos con todo tipo de negocios</h2>
+      <p class="sb">Adaptamos cada solución a la operativa real del sector, porque cada negocio es diferente.</p>
+    </div>
+    <div class="sec-grid">
+      <a href="sectores/software-para-gimnasios.html" class="secc-link rv">
+        <div class="sec-ico">🏋️</div>
+        <h3>Gimnasios</h3>
+        <p>Gestión de socios, cuotas, renovaciones automáticas y control administrativo completo.</p>
+      </a>
+      <a href="sectores/software-para-talleres.html" class="secc-link rv">
+        <div class="sec-ico">🔧</div>
+        <h3>Talleres</h3>
+        <p>Organización de clientes, trabajos, presupuestos y seguimiento de la operativa diaria.</p>
+      </a>
+      <a href="sectores/software-para-comercios.html" class="secc-link rv">
+        <div class="sec-ico">🏪</div>
+        <h3>Comercios</h3>
+        <p>Control de inventario, digitalización administrativa y automatización de tareas recurrentes.</p>
+      </a>
+      <a href="sectores/software-para-autonomos.html" class="secc-link rv">
+        <div class="sec-ico">💼</div>
+        <h3>Autónomos</h3>
+        <p>Automatización de tareas administrativas, gestión de clientes y organización del trabajo.</p>
+      </a>
+      <a href="sectores/software-para-pymes.html" class="secc-link rv">
+        <div class="sec-ico">🏢</div>
+        <h3>Pymes</h3>
+        <p>Digitalización completa de procesos internos para equipos en crecimiento que necesitan orden.</p>
+      </a>
+    </div>
+  </div>
+</section>
 
-    nav.querySelectorAll('a').forEach(a => {
-      a.addEventListener('click', () => {
-        nav.classList.remove('open');
-        btn.setAttribute('aria-expanded', 'false');
-      });
-    });
-  </script>
+<!-- PROCESO -->
+<section id="proceso" class="section s-n1">
+  <div class="wrap">
+    <div class="shead center rv">
+      <span class="tag">Cómo trabajamos</span>
+      <h2 class="sh">Un proceso claro, sin sorpresas</h2>
+      <p class="sb">Desde el primer análisis hasta el sistema funcionando, siempre sabrás en qué punto estamos.</p>
+    </div>
+    <div class="proc">
+      <div class="pstep rv"><div class="pdot">01</div><h3>Análisis del negocio</h3><p>Estudiamos tus procesos actuales para detectar problemas reales y oportunidades de mejora concretas.</p></div>
+      <div class="pstep rv"><div class="pdot">02</div><h3>Diseño de la solución</h3><p>Definimos una herramienta digital adaptada a tu operativa, sin funciones innecesarias.</p></div>
+      <div class="pstep rv"><div class="pdot">03</div><h3>Desarrollo del sistema</h3><p>Construimos la solución con foco en resolver el problema real, no en tecnología por la tecnología.</p></div>
+      <div class="pstep rv"><div class="pdot">04</div><h3>Evolución continua</h3><p>El sistema crece con tu negocio. Las herramientas evolucionan según tus necesidades reales.</p></div>
+    </div>
+  </div>
+</section>
 
+<!-- BLOG -->
+<section id="blog" class="section s-cr2">
+  <div class="wrap">
+    <div class="shead rv">
+      <span class="tag">Blog</span>
+      <h2 class="sh">Recursos sobre digitalización y automatización</h2>
+      <p class="sb">Guías prácticas para entender cómo mejorar la gestión y los procesos de tu negocio.</p>
+    </div>
+    <div class="blog-grid">
+      <a href="blog/automatizar-procesos-empresa.html" class="bc feat rv"><div class="bchip cn">Automatización</div><h3>Cómo automatizar los procesos de una empresa: guía práctica</h3><p>Qué procesos automatizar primero, cómo hacerlo y qué beneficios obtiene tu negocio desde el primer día.</p><span class="bl">Leer artículo →</span></a>
+      <a href="blog/automatizar-renovaciones-clientes.html" class="bc rv"><div class="bchip cg">Gestión de clientes</div><h3>Cómo automatizar las renovaciones de clientes y reducir bajas por olvido</h3><p>Cada cliente que se va porque nadie le avisó es un ingreso perdido.</p><span class="bl">Leer artículo →</span></a>
+      <a href="blog/digitalizar-negocio.html" class="bc rv"><div class="bchip cg">Digitalización</div><h3>Cómo digitalizar un negocio paso a paso: guía para pymes</h3><p>Por dónde empezar y cómo hacerlo sin grandes inversiones ni cambios bruscos.</p><span class="bl">Leer artículo →</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="contacto" class="section s-n2">
+  <div class="wrap">
+    <div class="cta rv">
+      <div class="cta-t">
+        <h2>¿Listo para digitalizar<br><em>tu empresa?</em></h2>
+        <p>Solicita un diagnóstico inicial gratuito y sin compromiso. Analizamos tu situación y te contamos exactamente qué podemos mejorar.</p>
+      </div>
+      <div class="cta-btns">
+        <a href="https://wa.me/34644747610" target="_blank" rel="noopener" class="btn-wa">
+          <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.025.507 3.934 1.395 5.61L0 24l6.545-1.367A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.015-1.375l-.36-.214-3.722.977.994-3.635-.234-.373A9.818 9.818 0 1112 21.818z"/></svg>
+          Solicitar diagnóstico gratuito
+        </a>
+        <a href="mailto:info@oar-digital.com" class="btn-mail">✉ info@oar-digital.com</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="fg">
+      <div class="fb"><img src="assets/logo.png" alt="OAR Digital Solutions" /><p>Automatización empresarial y software a medida para pymes y autónomos en España.</p></div>
+      <div class="fc"><h4>Servicios</h4><ul><li><a href="servicios/automatizacion-empresarial.html">Automatización empresarial</a></li><li><a href="servicios/automatizacion-procesos.html">Automatización de procesos</a></li><li><a href="servicios/software-a-medida.html">Software a medida</a></li><li><a href="servicios/sistemas-gestion-empresa.html">Sistemas de gestión</a></li><li><a href="servicios/desarrollo-web.html">Desarrollo web</a></li></ul></div>
+      <div class="fc"><h4>Sectores</h4><ul><li><a href="sectores/software-para-gimnasios.html">Gimnasios</a></li><li><a href="sectores/software-para-talleres.html">Talleres</a></li><li><a href="sectores/software-para-comercios.html">Comercios</a></li><li><a href="sectores/software-para-autonomos.html">Autónomos</a></li><li><a href="sectores/software-para-pymes.html">Pymes</a></li></ul></div>
+      <div class="fc"><h4>Blog</h4><ul><li><a href="blog/automatizar-procesos-empresa.html">Automatizar procesos</a></li><li><a href="blog/automatizar-renovaciones-clientes.html">Automatizar renovaciones</a></li><li><a href="blog/digitalizar-negocio.html">Digitalizar un negocio</a></li><li><a href="blog/software-gestion-clientes.html">Gestión de clientes</a></li></ul></div>
+      <div class="fc"><h4>Contacto</h4><ul><li><a href="contacto.html">Página de contacto</a></li><li><a href="mailto:info@oar-digital.com">info@oar-digital.com</a></li><li><a href="https://wa.me/34644747610" target="_blank" rel="noopener">+34 644 747 610</a></li></ul></div>
+    </div>
+    <div class="fbot"><p>© 2026 OAR Digital Solutions. Todos los derechos reservados.</p><a href="/">oar-digital.com</a></div>
+  </div>
+</footer>
+
+<script>
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach((e,i) => { if(e.isIntersecting){ setTimeout(()=>e.target.classList.add('on'), i*70); obs.unobserve(e.target); } });
+  }, {threshold:.07});
+  document.querySelectorAll('.rv').forEach(el => obs.observe(el));
+  const btn=document.getElementById('hamburger'), nav=document.getElementById('navLinks');
+  btn.addEventListener('click', ()=>{ const o=nav.classList.toggle('open'); btn.setAttribute('aria-expanded',o); });
+  nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{ nav.classList.remove('open'); btn.setAttribute('aria-expanded','false'); }));
+</script>
 </body>
 </html>
