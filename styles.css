@@ -823,3 +823,93 @@ footer {
   .contact-layout { grid-template-columns: 1fr; gap: 40px; }
   .faq-grid { grid-template-columns: 1fr; }
 }
+
+/* ============================================================
+   AÑADIR AL FINAL DE styles.css
+   Mejoras para blog/artículo — no modifica nada existente
+   ============================================================ */
+
+/* ── Alias de variables legacy (compatibilidad con article-cta y article-body) ── */
+:root {
+  --n2:   #162040;   /* alias de --bg-navy */
+  --n3:   #1c2a52;   /* alias de --bg-navy2 */
+  --rl:   18px;      /* alias de --r-lg */
+  --fh:   'Outfit', sans-serif;  /* alias de --font-h */
+  --gold:  #f5a820;  /* alias de --accent */
+  --gold2: #e09510;  /* alias de --accent-dk */
+}
+
+/* ── Figura / imagen destacada del artículo ── */
+.article-figure {
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow:
+    0 8px 40px rgba(13, 21, 38, 0.45),
+    0 2px 8px rgba(13, 21, 38, 0.25);
+  margin: 32px 0 0;
+  transition: box-shadow 0.35s ease;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.article-figure:hover {
+  box-shadow:
+    0 16px 56px rgba(13, 21, 38, 0.55),
+    0 4px 12px rgba(245, 168, 32, 0.12);
+}
+
+/* ── Imagen dentro de figure ── */
+.article-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.article-figure:hover .article-image {
+  transform: scale(1.02);
+}
+
+/* ── Figcaption ── */
+figcaption {
+  text-align: center;
+  font-size: 0.78rem;
+  color: var(--text-inv3);
+  padding: 10px 16px 14px;
+  font-weight: 300;
+  letter-spacing: 0.01em;
+  line-height: 1.5;
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+/* ── Espaciado mejorado entre bloques del artículo ── */
+.article-body > h2 {
+  margin-top: 52px;
+  padding-top: 8px;
+}
+.article-body > h2:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+.article-body > h3 {
+  margin-top: 36px;
+}
+.article-checklist {
+  margin-top: 28px;
+  margin-bottom: 32px;
+}
+.article-list {
+  margin-top: 16px;
+  margin-bottom: 28px;
+}
+
+/* ── Responsive: imagen en móvil ── */
+@media (max-width: 768px) {
+  .article-figure {
+    border-radius: 10px;
+    margin-top: 24px;
+  }
+  .article-figure:hover .article-image {
+    transform: none; /* sin zoom en táctil */
+  }
+}
