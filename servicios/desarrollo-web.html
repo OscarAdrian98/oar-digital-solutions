@@ -17,8 +17,8 @@
   {"@context":"https://schema.org","@type":"Service","name":"Desarrollo web profesional","provider":{"@type":"ProfessionalService","name":"OAR Digital Solutions","url":"https://oar-digital.com","telephone":"+34644747610","email":"info@oar-digital.com"},"description":"Desarrollo de páginas web profesionales para empresas, autónomos y negocios locales.","areaServed":"ES","url":"https://oar-digital.com/servicios/desarrollo-web.html"}
   </script>
   <link rel="icon" href="/favicon.ico" sizes="any">
-  <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+  <link rel="icon" type="image/x-icon" href="../assets/favicon.ico" />
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png" />
   <link rel="stylesheet" href="../styles.css" />
 </head>
 <body>
@@ -305,6 +305,73 @@
     </div>
   </section>
 
+  <!-- FAQ: navy profundo -->
+  <section class="section section-navy2" aria-labelledby="faq-title" id="faq">
+    <div class="container">
+      <div class="section-header fade-up">
+        <span class="section-tag">Preguntas frecuentes</span>
+        <h2 class="section-title" id="faq-title">Dudas habituales sobre el desarrollo de una web</h2>
+        <p class="section-sub">Las preguntas que nos hacen la mayoría de clientes antes de empezar.</p>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item fade-up">
+          <button class="faq-q" aria-expanded="false">
+            ¿Cuánto tiempo tarda en estar lista la web?
+            <span class="faq-arrow">▾</span>
+          </button>
+          <div class="faq-a">
+            <p>Depende de la complejidad, pero una web corporativa o escaparate estándar suele estar lista en 2 a 4 semanas desde que tenemos toda la información del negocio. El factor que más influye en el plazo es la velocidad con la que el cliente nos facilita los textos, fotos y contenido.</p>
+          </div>
+        </div>
+        <div class="faq-item fade-up">
+          <button class="faq-q" aria-expanded="false">
+            ¿Necesito un dominio y un hosting?
+            <span class="faq-arrow">▾</span>
+          </button>
+          <div class="faq-a">
+            <p>Sí, para publicar la web necesitas un dominio (ej. tunegocio.com) y un alojamiento web. Si ya los tienes, trabajamos con lo que tienes. Si no, te orientamos sobre las mejores opciones según tu caso — hay opciones económicas y fiables que funcionan muy bien para webs como las que desarrollamos.</p>
+          </div>
+        </div>
+        <div class="faq-item fade-up">
+          <button class="faq-q" aria-expanded="false">
+            ¿Puedo modificar la web yo mismo una vez entregada?
+            <span class="faq-arrow">▾</span>
+          </button>
+          <div class="faq-a">
+            <p>Depende de lo que necesites cambiar. Para ajustes de textos, imágenes o precios, te explicamos cómo hacerlo directamente. Para cambios de diseño o estructura, lo más rápido es que nos lo pidas a nosotros — solucionamos ese tipo de ajustes con rapidez.</p>
+          </div>
+        </div>
+        <div class="faq-item fade-up">
+          <button class="faq-q" aria-expanded="false">
+            ¿Qué necesito tener preparado para empezar?
+            <span class="faq-arrow">▾</span>
+          </button>
+          <div class="faq-a">
+            <p>Idealmente: una descripción clara de tu negocio, los servicios que ofreces, fotos del negocio o del equipo si las tienes, y el logo si existe. Si no tienes todo esto, no te preocupes, te ayudamos a organizar la información durante el briefing inicial.</p>
+          </div>
+        </div>
+        <div class="faq-item fade-up">
+          <button class="faq-q" aria-expanded="false">
+            ¿Hacen también tiendas online?
+            <span class="faq-arrow">▾</span>
+          </button>
+          <div class="faq-a">
+            <p>No es nuestro servicio principal. Nos especializamos en webs corporativas y escaparate orientadas a generar confianza y captar contactos. Si necesitas e-commerce, te lo decimos claramente desde el principio para no hacerte perder el tiempo.</p>
+          </div>
+        </div>
+        <div class="faq-item fade-up">
+          <button class="faq-q" aria-expanded="false">
+            ¿Qué pasa si necesito cambios después de la entrega?
+            <span class="faq-arrow">▾</span>
+          </button>
+          <div class="faq-a">
+            <p>Incluimos un periodo de revisiones antes de publicar la web para que quede exactamente como quieres. Una vez publicada, seguimos disponibles para ajustes y mejoras puntuales. Avisamos siempre del coste antes de hacer cualquier cambio adicional.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- CTA: navy con borde dorado -->
   <section id="contacto" class="section section-navy2" aria-labelledby="cta-title">
     <div class="container">
@@ -398,6 +465,23 @@
     a.addEventListener('click', () => {
       nav.classList.remove('open');
       btn.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  // FAQ acordeón
+  document.querySelectorAll('.faq-q').forEach(q => {
+    q.addEventListener('click', () => {
+      const isOpen = q.getAttribute('aria-expanded') === 'true';
+      // cierra todos
+      document.querySelectorAll('.faq-q').forEach(other => {
+        other.setAttribute('aria-expanded', 'false');
+        other.nextElementSibling.classList.remove('open');
+      });
+      // abre el pulsado si estaba cerrado
+      if (!isOpen) {
+        q.setAttribute('aria-expanded', 'true');
+        q.nextElementSibling.classList.add('open');
+      }
     });
   });
 </script>

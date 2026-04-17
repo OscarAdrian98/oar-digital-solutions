@@ -913,3 +913,55 @@ figcaption {
     transform: none; /* sin zoom en táctil */
   }
 }
+
+/* ─── FAQ ACORDEÓN (desarrollo-web — scoped a .faq-list) ─── */
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+}
+.faq-list .faq-item {
+  background: rgba(255,255,255,0.02);
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  box-shadow: none;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  transition: background 0.2s;
+}
+.faq-list .faq-item:last-child { border-bottom: none; }
+.faq-list .faq-item:hover { background: rgba(245,168,32,0.04); border-color: transparent; }
+.faq-list .faq-item h3 { display: none; }
+.faq-q {
+  width: 100%;
+  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  padding: 22px 28px;
+  background: none; border: none; cursor: pointer;
+  font-family: var(--font-h); font-size: 0.95rem; font-weight: 600;
+  color: #fff; text-align: left;
+  transition: color 0.2s;
+}
+.faq-q:hover { color: var(--accent); }
+.faq-q[aria-expanded="true"] { color: var(--accent); }
+.faq-arrow {
+  font-size: 0.9rem; color: var(--accent); flex-shrink: 0;
+  transition: transform 0.25s ease;
+  display: inline-block;
+}
+.faq-q[aria-expanded="true"] .faq-arrow { transform: rotate(180deg); }
+.faq-a {
+  max-height: 0; overflow: hidden;
+  transition: max-height 0.35s ease, padding 0.25s;
+  padding: 0 28px;
+}
+.faq-a.open {
+  max-height: 400px;
+  padding: 0 28px 22px;
+}
+.faq-a p {
+  font-size: 0.9rem; color: var(--text-inv2);
+  line-height: 1.8; font-weight: 300; margin: 0;
+}
