@@ -17,6 +17,14 @@
     <priority>0.8</priority>
   </url>
 
+  <!-- PROYECTOS -->
+  <url>
+    <loc>https://oar-digital.com/proyectos.html</loc>
+    <lastmod>2026-06-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
   <!-- SERVICIOS -->
   <url>
     <loc>https://oar-digital.com/servicios/automatizacion-empresarial.html</loc>

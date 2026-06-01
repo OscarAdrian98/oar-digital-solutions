@@ -42,7 +42,7 @@
     .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; height: var(--nav); background: rgba(13,21,38,0.97); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(245,168,32,0.12); display: flex; align-items: center; }
     .nav-inner { display: flex; align-items: center; justify-content: space-between; width: 100%; max-width: var(--max); margin: 0 auto; padding: 0 36px; }
     .nav-logo img { height: 48px; width: auto; }
-    .nav-links { display: flex; align-items: center; gap: 34px; }
+    .nav-links { display: flex; align-items: center; gap: 24px; }
     .nav-links a { font-size: .875rem; font-weight: 500; color: var(--text3); transition: color .2s; }
     .nav-links a:hover { color: var(--gold); }
     .btn-nav { display: inline-flex; align-items: center; gap: 7px; padding: 9px 20px; background: var(--gold); color: var(--n0) !important; font-weight: 700; font-size: .83rem; border-radius: 8px; transition: background .2s, transform .15s; }
@@ -245,6 +245,11 @@
       .proc { grid-template-columns: 1fr 1fr; }
       .proc::before { display: none; }
     }
+    @media (max-width: 920px) {
+      .nav-links { display: none; }
+      .nav-links.open { display: flex; flex-direction: column; position: fixed; top: var(--nav); left: 0; right: 0; background: var(--n0); padding: 24px 36px; gap: 20px; border-bottom: 1px solid rgba(245,168,32,.1); align-items: flex-start; z-index: 99; }
+      .hamburger { display: flex; }
+    }
     @media (max-width: 520px) {
       .wrap { padding: 0 20px; }
       .svc-grid, .proc { grid-template-columns: 1fr; }
@@ -269,6 +274,7 @@
         <a href="#servicios">Servicios</a>
         <a href="#problemas">Problemas</a>
         <a href="sectores.html">Sectores</a>
+        <a href="proyectos.html">Proyectos</a>
         <a href="#proceso">Proceso</a>
         <a href="#blog">Blog</a>
         <a href="contacto.html">Contacto</a>
